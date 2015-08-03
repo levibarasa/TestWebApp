@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 31, 2015 3:02:57 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TblUser" table="tbl_user" catalog="testdb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="Username" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="50" not-null="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="50" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="10" not-null="true" />
+        </property>
+        <property name="dob" type="string">
+            <column name="DOB" length="20" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="Phone" length="20" not-null="true" />
+        </property>
+        <property name="activationCode" type="string">
+            <column name="ActivationCode" length="10" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="Status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
