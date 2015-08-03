@@ -13,10 +13,10 @@
 			 <h1>Login</h1>
 			 <p>Please enter your login information
 				 <br/>New User? <a href="register.jsp">Register</a></p>
-			 <label>User ID
-				 <span class="small">Enter your user ID</span>
+			 <label>UserName
+				 <span class="small">Enter your userName</span>
 			 </label>
-			 <input type="text" name="userId" id="userId" />
+			 <input type="text" name="username" id="userId" />
 
 			 <label>Password
 				 <span class="small">Min. size 6 chars</span>
