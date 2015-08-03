@@ -17,6 +17,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import managers.Expiry;
+import managers.MailTemplates;
 import managers.SendMail;
 import model.TblUser;
 
@@ -41,7 +43,10 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 	 try {	
 		 RegisterSL registerService = new RegisterSL();
 		 boolean result = registerService.register(user);
-                 SendMail.send("Test Web App", "lvbarasa@gmail.com", "yellowagency@2015", email, null, "Complete Registration Process", "text/html; charset=utf-8");
+                 Expiry expiry = new Expiry();
+                 SendMail.send("Test Web App", "lvbarasa@gmail.com", "yellowagency@2015", email,
+                         MailTemplates.getNewUserTemplate(user.getFirstName()+"  "+user.getLastName(), expiry.getSession("/TestWebApp"), "73ue4g3e8hoisdhb")
+                         , "Complete Registration Process", "text/html; charset=utf-8");
 		 out.println("<html>");
 		 out.println("<head>");		
 		 out.println("<title>Registration Successful</title>");		
